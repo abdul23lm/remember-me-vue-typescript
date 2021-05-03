@@ -1,10 +1,9 @@
 <script>
-import { useStore } from 'vuex'
-
+import { useStore } from '@/store'
 export default {
-    setup() {
-        const store = useStore()
-    }
+  setup() {
+    const store = useStore()
+    store.dispatch()
+  }
 }
-
 </script>

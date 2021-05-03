@@ -1,6 +1,13 @@
-import { createStore, Store as VuexStore, CommitOptions, DispatchOptions, createLogger } from 'vuex'
+import {
+  createStore,
+  Store as VuexStore,
+  CommitOptions,
+  DispatchOptions,
+  createLogger
+} from 'vuex'
+
 import { State, state } from './state'
-import { Mutations, mutations } from './mutation'
+import { Mutations, mutations } from './mutations'
 import { Actions, actions } from './actions'
 import { Getters, getters } from './getters'
 
@@ -19,7 +26,7 @@ export function useStore() {
 export type Store = Omit<
   VuexStore<State>,
   'getters' | 'commit' | 'dispatch'
-  > & {
+> & {
   commit<K extends keyof Mutations, P extends Parameters<Mutations[K]>[1]>(
     key: K,
     payload: P,
@@ -28,11 +35,11 @@ export type Store = Omit<
 } & {
   dispatch<K extends keyof Actions>(
     key: K,
-    payload: Parameters<Mutations[K]>[1],
+    payload?: Parameters<Actions[K]>[1],
     options?: DispatchOptions
   ): ReturnType<Actions[K]>
 } & {
-  getters: (
+  getters: {
     [K in keyof Getters]: ReturnType<Getters[K]>
-  )
+  }
 }
