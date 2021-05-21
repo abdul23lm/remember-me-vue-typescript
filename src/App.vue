@@ -19,9 +19,7 @@ export default defineComponent({
 
 <template>
   <div class="container mx-auto mt-4">
-    <h1 class="text-3xl text-center p-2 font-bold">
-      Remember Me with Typescript and Vuex 4
-    </h1>
+
 
     <div v-if="loading">
       <h3 class="text-center mt-4">Loading...</h3>
