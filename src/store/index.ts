@@ -19,7 +19,9 @@ export const store = createStore<State>({
   getters
 })
 
-
+export function useStore() {
+  return store as Store
+}
 
 export type Store = Omit<
   VuexStore<State>,
