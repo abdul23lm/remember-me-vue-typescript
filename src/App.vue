@@ -6,7 +6,14 @@ import { useStore } from './store'
 import { ActionTypes } from './store/actions'
 export default defineComponent({
   components: { TodoList, NewItem },
-  
+ setup() {
+    const store = useStore()
+    const loading = computed(() => store.state.loading)
+    onMounted(() => store.dispatch(ActionTypes.GetTodoItems))
+    const completedCount = computed(() => store.getters.completedCount)
+    const totalCount = computed(() => store.getters.totalCount)
+    return { loading, completedCount, totalCount }
+  } 
 })
 </script>
 
