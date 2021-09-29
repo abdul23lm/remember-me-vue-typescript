@@ -10,5 +10,7 @@ export const getters: GetterTree<State, State> & Getters = {
   completedCount(state) {
     return state.items.filter(i => i.completed).length
   },
-
+  totalCount(state) {
+    return state.items.length
+  }
 }
