@@ -9,14 +9,7 @@
           placeholder="What task do you need to complete?"
         />
       </div>
-      <div class="flex-shrink-0">
-        <button
-          type="submit"
-          class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-3 rounded"
-        >
-          Add
-        </button>
-      </div>
+
     </div>
   </form>
 </template>
