@@ -6,10 +6,6 @@ import {
   createLogger
 } from 'vuex'
 
-import { State, state } from './state'
-import { Mutations, mutations } from './mutations'
-import { Actions, actions } from './actions'
-import { Getters, getters } from './getters'
 
 export const store = createStore<State>({
   plugins: process.env.NODE_ENV === 'development' ? [createLogger()] : [],
